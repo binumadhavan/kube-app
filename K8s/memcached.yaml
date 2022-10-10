@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vpromc
+  name: vpromc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vpromc
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: vpromc
+    spec:
+      containers:
+      - image: memcached
+        name: vpromc
+        ports:
+         - name: vpromc-port
+           containerPort: 11211  
+status: {}
