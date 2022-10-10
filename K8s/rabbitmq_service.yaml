@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vpromq01
+  name: vpromq01
+spec:
+  ports:
+  - port: 15672
+    protocol: TCP
+    targetPort: vpromq01-port
+  selector:
+    app: vpromq01
+status:
+  loadBalancer: {}
